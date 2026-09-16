@@ -73,6 +73,16 @@ body {
   50% { opacity: 0.6; transform: scaleY(1.2); }
 }
 
+@keyframes pulseSlow {
+  0%, 100% { transform: scale(1) translate(0, 0); opacity: 0.75; }
+  50% { transform: scale(1.08) translate(8px, 12px); opacity: 0.95; }
+}
+
+@keyframes pulseGlow {
+  0%, 100% { opacity: 0.55; transform: scale(0.96); }
+  50% { opacity: 0.85; transform: scale(1.05); }
+}
+
 .animate-rain { animation: rainDrop linear infinite; }
 .animate-lightning { animation: lightningFlash 4.5s infinite; }
 .animate-snow { animation: snowFall ease-in-out infinite; }
@@ -80,6 +90,8 @@ body {
 .animate-twinkle { animation: starTwinkle ease-in-out infinite; }
 .animate-float-heart { animation: floatHeartUp 1.2s cubic-bezier(0.2, 0.8, 0.2, 1) forwards; }
 .animate-heat-shimmer { animation: heatShimmerWave 2.5s ease-in-out infinite; }
+.animate-pulse-slow { animation: pulseSlow 9s ease-in-out infinite; }
+.animate-pulse-glow { animation: pulseGlow 6s ease-in-out infinite; }
 
 /* Ocultar barra de desplazamiento manteniendo scroll nativo fluido */
 .no-scrollbar::-webkit-scrollbar {

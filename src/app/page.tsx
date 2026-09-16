@@ -13,6 +13,7 @@ import { DailyForecast } from '@/components/lobo-weather/DailyForecast';
 import { WeatherDetailsGrid } from '@/components/lobo-weather/WeatherDetailsGrid';
 import { LoboLoveNote } from '@/components/lobo-weather/LoboLoveNote';
 import { DemoWeatherSelector } from '@/components/lobo-weather/DemoWeatherSelector';
+import { AmbientAtmosphere } from '@/components/lobo-weather/AmbientAtmosphere';
 import { Heart, Smartphone, RefreshCw } from 'lucide-react';
 
 export default function LoboWeatherPage() {
@@ -130,9 +131,12 @@ export default function LoboWeatherPage() {
   };
 
   return (
-    <main className="min-h-screen bg-slate-950 text-slate-100 flex justify-center px-3.5 pt-3 pb-16 sm:py-8">
-      {/* Contenedor Mobile-First optimizado para iPhone 14 (390px) */}
-      <div className="w-full max-w-[410px] flex flex-col gap-4">
+    <main className="min-h-screen relative text-slate-100 flex justify-center px-3.5 pt-3 pb-16 sm:py-8 overflow-x-hidden">
+      {/* 🌌 Fondo Atmosférico con Ambient Glow Dinámico */}
+      <AmbientAtmosphere mood={currentMood} />
+
+      {/* Contenedor Mobile-First optimizado para iPhone 14 (390px) con Z-Index superior */}
+      <div className="w-full max-w-[410px] flex flex-col gap-4 relative z-10">
         {/* Header Superior con Saludo a Corazoncillo y Toggle °F/°C */}
         <WeatherHeader
           unit={unit}
