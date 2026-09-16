@@ -48,19 +48,28 @@ export const LoboScene: React.FC<LoboSceneProps> = ({ mood, onLoboTap }) => {
     setDragOffset(0);
   }, [mood]);
 
+  const triggerHaptic = (ms: number = 30) => {
+    if (typeof window !== 'undefined' && 'vibrate' in navigator) {
+      try { navigator.vibrate(ms); } catch {}
+    }
+  };
+
   const goToNextImage = () => {
+    triggerHaptic(25);
     setIsBouncing(true);
     setTimeout(() => setIsBouncing(false), 350);
     setCurrentImageIdx(prev => (prev + 1) % images.length);
   };
 
   const goToPrevImage = () => {
+    triggerHaptic(25);
     setIsBouncing(true);
     setTimeout(() => setIsBouncing(false), 350);
     setCurrentImageIdx(prev => (prev - 1 + images.length) % images.length);
   };
 
   const triggerTapEffect = (clientX: number, clientY: number, containerElement?: HTMLElement) => {
+    triggerHaptic(40);
     setIsBouncing(true);
     setTimeout(() => setIsBouncing(false), 550);
 
