@@ -73,16 +73,16 @@ export const HourlyForecastChart: React.FC<HourlyForecastChartProps> = ({ hourly
   };
 
   return (
-    <div className="w-full rounded-3xl bg-slate-900/90 p-4 border border-slate-800 shadow-xl backdrop-blur-sm select-none">
-      {/* 1. Header con 3 Pestañas Interactivas estilo Google */}
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2.5 mb-3 pb-2.5 border-b border-slate-800">
+    <div className="w-full rounded-3xl bg-slate-900/55 p-4 border border-white/[0.08] shadow-[inset_0_1px_1px_rgba(255,255,255,0.14),0_12px_32px_rgba(0,0,0,0.35)] backdrop-blur-2xl select-none">
+      {/* 1. Header con 3 Pestañas Interactivas estilo Liquid Glass */}
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2.5 mb-3 pb-2.5 border-b border-white/[0.08]">
         <h3 className="text-xs font-extrabold uppercase tracking-wider text-slate-300 flex items-center gap-2">
           <span className="w-2 h-2 rounded-full bg-amber-400 animate-pulse" />
           Pronóstico por Hora
         </h3>
 
         {/* Selector de Pestañas [ Temperatura | Lluvia | Viento ] */}
-        <div className="flex items-center gap-1 p-1 rounded-2xl bg-slate-950/80 border border-slate-800 self-start sm:self-auto">
+        <div className="flex items-center gap-1 p-1 rounded-2xl bg-white/[0.04] border border-white/[0.08] backdrop-blur-md self-start sm:self-auto">
           <button
             onClick={() => setActiveTab('temp')}
             className={`flex items-center gap-1 px-2.5 py-1 rounded-xl text-xs font-bold transition-all ${
@@ -315,8 +315,8 @@ export const HourlyForecastChart: React.FC<HourlyForecastChartProps> = ({ hourly
           }
 
           return (
-            <div className="mt-3 p-3.5 rounded-2xl bg-slate-950/90 border border-amber-500/40 shadow-xl animate-fadeIn">
-              <div className="flex items-start justify-between pb-2 mb-2 border-b border-slate-800">
+            <div className="mt-3 p-3.5 rounded-2xl bg-slate-950/70 border border-amber-400/35 shadow-[inset_0_1px_1px_rgba(255,255,255,0.15),0_8px_24px_rgba(0,0,0,0.4)] backdrop-blur-xl animate-fadeIn">
+              <div className="flex items-start justify-between pb-2 mb-2 border-b border-white/[0.08]">
                 <div className="flex items-center gap-1.5">
                   <Clock className="w-3.5 h-3.5 text-amber-400" />
                   <span className="text-xs font-black uppercase tracking-wider text-amber-300">

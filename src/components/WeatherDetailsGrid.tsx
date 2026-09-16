@@ -25,13 +25,13 @@ export const WeatherDetailsGrid: React.FC<WeatherDetailsGridProps> = ({ current,
 
   return (
     <div className="w-full flex flex-col gap-3 select-none">
-      {/* 1. Tarjeta Destacada: Semáforo de Patitas (Estilo Alerta iOS) */}
-      <div className={`w-full rounded-3xl p-4 border shadow-2xl backdrop-blur-md relative overflow-hidden ${
+      {/* 1. Tarjeta Destacada: Semáforo de Patitas estilo Liquid Glass */}
+      <div className={`w-full rounded-3xl p-4 border shadow-[inset_0_1px_1px_rgba(255,255,255,0.15),0_12px_36px_rgba(0,0,0,0.35)] backdrop-blur-2xl relative overflow-hidden ${
         pawSafety.level === 'danger'
-          ? 'bg-gradient-to-r from-rose-950/80 via-slate-900 to-rose-950/60 border-rose-500/50 shadow-rose-950/50'
+          ? 'bg-gradient-to-r from-rose-950/60 via-slate-900/60 to-rose-950/50 border-rose-500/40 shadow-rose-950/40'
           : pawSafety.level === 'caution'
-          ? 'bg-gradient-to-r from-amber-950/80 via-slate-900 to-amber-950/60 border-amber-500/50 shadow-amber-950/50'
-          : 'bg-gradient-to-r from-emerald-950/80 via-slate-900 to-emerald-950/60 border-emerald-500/50 shadow-emerald-950/50'
+          ? 'bg-gradient-to-r from-amber-950/60 via-slate-900/60 to-amber-950/50 border-amber-500/40 shadow-amber-950/40'
+          : 'bg-gradient-to-r from-emerald-950/60 via-slate-900/60 to-emerald-950/50 border-emerald-500/40 shadow-emerald-950/40'
       }`}>
         <div className="flex items-start gap-3.5">
           <div className={`p-3 rounded-2xl shadow-md flex-shrink-0 ${
@@ -73,10 +73,10 @@ export const WeatherDetailsGrid: React.FC<WeatherDetailsGridProps> = ({ current,
         </div>
       </div>
 
-      {/* 2. Grid de 4 Métricas Detalladas (Diseño iOS 14 Widgets) */}
+      {/* 2. Grid de 4 Métricas Detalladas estilo Liquid Glass */}
       <div className="grid grid-cols-2 gap-3">
         {/* Viento de Juárez */}
-        <div className="rounded-3xl bg-slate-900/90 p-4 border border-slate-800 shadow-xl backdrop-blur-sm flex flex-col justify-between">
+        <div className="rounded-3xl bg-slate-900/55 p-4 border border-white/[0.08] shadow-[inset_0_1px_1px_rgba(255,255,255,0.14),0_12px_32px_rgba(0,0,0,0.35)] backdrop-blur-2xl flex flex-col justify-between">
           <div>
             <div className="flex items-center justify-between text-slate-400 mb-2">
               <span className="text-[11px] font-extrabold uppercase tracking-wider">Viento</span>
@@ -86,7 +86,7 @@ export const WeatherDetailsGrid: React.FC<WeatherDetailsGridProps> = ({ current,
               {windSpeed}
             </p>
           </div>
-          <div className="mt-2 pt-2 border-t border-slate-800 flex items-center justify-between text-[11px]">
+          <div className="mt-2 pt-2 border-t border-white/[0.08] flex items-center justify-between text-[11px]">
             <span className="text-slate-400 truncate">
               {current.windSpeedMph >= 18 ? 'Tolvanera juarense 💨' : 'Brisa suave'}
             </span>
@@ -95,7 +95,7 @@ export const WeatherDetailsGrid: React.FC<WeatherDetailsGridProps> = ({ current,
         </div>
 
         {/* Humedad */}
-        <div className="rounded-3xl bg-slate-900/90 p-4 border border-slate-800 shadow-xl backdrop-blur-sm flex flex-col justify-between">
+        <div className="rounded-3xl bg-slate-900/55 p-4 border border-white/[0.08] shadow-[inset_0_1px_1px_rgba(255,255,255,0.14),0_12px_32px_rgba(0,0,0,0.35)] backdrop-blur-2xl flex flex-col justify-between">
           <div>
             <div className="flex items-center justify-between text-slate-400 mb-2">
               <span className="text-[11px] font-extrabold uppercase tracking-wider">Humedad</span>
@@ -105,13 +105,13 @@ export const WeatherDetailsGrid: React.FC<WeatherDetailsGridProps> = ({ current,
               {current.humidity}%
             </p>
           </div>
-          <div className="mt-2 pt-2 border-t border-slate-800 text-[11px] text-slate-400">
+          <div className="mt-2 pt-2 border-t border-white/[0.08] text-[11px] text-slate-400">
             <span>{current.humidity < 30 ? 'Ambiente seco (Desierto)' : 'Humedad agradable'}</span>
           </div>
         </div>
 
         {/* Índice UV */}
-        <div className="rounded-3xl bg-slate-900/90 p-4 border border-slate-800 shadow-xl backdrop-blur-sm flex flex-col justify-between">
+        <div className="rounded-3xl bg-slate-900/55 p-4 border border-white/[0.08] shadow-[inset_0_1px_1px_rgba(255,255,255,0.14),0_12px_32px_rgba(0,0,0,0.35)] backdrop-blur-2xl flex flex-col justify-between">
           <div>
             <div className="flex items-center justify-between text-slate-400 mb-2">
               <span className="text-[11px] font-extrabold uppercase tracking-wider">Índice UV</span>
@@ -126,13 +126,13 @@ export const WeatherDetailsGrid: React.FC<WeatherDetailsGridProps> = ({ current,
               </span>
             </div>
           </div>
-          <div className="mt-2 pt-2 border-t border-slate-800 text-[11px] text-slate-400">
+          <div className="mt-2 pt-2 border-t border-white/[0.08] text-[11px] text-slate-400">
             <span>{current.uvIndex >= 6 ? 'Protección solar recomendada' : 'No requiere protección'}</span>
           </div>
         </div>
 
         {/* Sol en Juárez (Amanecer y Atardecer lado a lado) */}
-        <div className="rounded-3xl bg-slate-900/90 p-4 border border-slate-800 shadow-xl backdrop-blur-sm flex flex-col justify-between">
+        <div className="rounded-3xl bg-slate-900/55 p-4 border border-white/[0.08] shadow-[inset_0_1px_1px_rgba(255,255,255,0.14),0_12px_32px_rgba(0,0,0,0.35)] backdrop-blur-2xl flex flex-col justify-between">
           <div>
             <div className="flex items-center justify-between text-slate-400 mb-2">
               <span className="text-[11px] font-extrabold uppercase tracking-wider">Sol en Juárez</span>

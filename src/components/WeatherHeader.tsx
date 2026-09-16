@@ -64,13 +64,13 @@ export const WeatherHeader: React.FC<WeatherHeaderProps> = ({
           </div>
         </div>
 
-        {/* Toggle °F / °C estilo Google */}
-        <div className="flex items-center p-1 rounded-2xl bg-slate-900 border border-slate-700/80 shadow-inner">
+        {/* Toggle °F / °C estilo Liquid Glass */}
+        <div className="flex items-center p-1 rounded-2xl bg-slate-900/50 backdrop-blur-xl border border-white/[0.08] shadow-[inset_0_1px_1px_rgba(255,255,255,0.12)]">
           <button
             onClick={() => onToggleUnit('F')}
             className={`px-3 py-1 text-xs font-extrabold rounded-xl transition-all ${
               unit === 'F'
-                ? 'bg-sky-500 text-white shadow-md'
+                ? 'bg-sky-500 text-white shadow-md shadow-sky-500/30'
                 : 'text-slate-400 hover:text-white'
             }`}
           >
@@ -80,7 +80,7 @@ export const WeatherHeader: React.FC<WeatherHeaderProps> = ({
             onClick={() => onToggleUnit('C')}
             className={`px-3 py-1 text-xs font-extrabold rounded-xl transition-all ${
               unit === 'C'
-                ? 'bg-sky-500 text-white shadow-md'
+                ? 'bg-sky-500 text-white shadow-md shadow-sky-500/30'
                 : 'text-slate-400 hover:text-white'
             }`}
           >
@@ -89,8 +89,8 @@ export const WeatherHeader: React.FC<WeatherHeaderProps> = ({
         </div>
       </div>
 
-      {/* 2. Banner Cariñoso de Saludo para Corazoncillo / Amorcillo */}
-      <div className="w-full flex items-center justify-between px-3.5 py-2 rounded-2xl bg-gradient-to-r from-rose-500/15 via-purple-500/10 to-sky-500/10 border border-rose-500/25 shadow-sm">
+      {/* 2. Banner Cariñoso de Saludo para Corazoncillo / Amorcillo estilo Liquid Glass */}
+      <div className="w-full flex items-center justify-between px-3.5 py-2.5 rounded-2xl bg-gradient-to-r from-rose-500/15 via-purple-500/10 to-sky-500/10 backdrop-blur-xl border border-rose-400/25 shadow-[inset_0_1px_1px_rgba(255,255,255,0.14),0_6px_20px_rgba(0,0,0,0.25)]">
         <div className="flex items-center gap-2 text-xs font-bold text-rose-300">
           <Sparkles className="w-4 h-4 text-rose-400 animate-pulse" />
           <span>{greeting}</span>

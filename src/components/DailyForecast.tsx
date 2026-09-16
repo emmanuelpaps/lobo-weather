@@ -54,8 +54,8 @@ export const DailyForecast: React.FC<DailyForecastProps> = ({ daily, unit, curre
   };
 
   return (
-    <div className="w-full rounded-3xl bg-slate-900/90 p-4 border border-slate-800 shadow-xl backdrop-blur-sm select-none">
-      <div className="flex items-center justify-between mb-3 pb-2 border-b border-slate-800">
+    <div className="w-full rounded-3xl bg-slate-900/55 p-4 border border-white/[0.08] shadow-[inset_0_1px_1px_rgba(255,255,255,0.14),0_12px_32px_rgba(0,0,0,0.35)] backdrop-blur-2xl select-none">
+      <div className="flex items-center justify-between mb-3 pb-2 border-b border-white/[0.08]">
         <h3 className="text-xs font-extrabold uppercase tracking-wider text-slate-300 flex items-center gap-2">
           <span className="w-2 h-2 rounded-full bg-sky-400 animate-pulse" />
           Pronóstico de 7 Días
@@ -65,7 +65,7 @@ export const DailyForecast: React.FC<DailyForecastProps> = ({ daily, unit, curre
         </span>
       </div>
 
-      <div className="flex flex-col divide-y divide-slate-800/80">
+      <div className="flex flex-col divide-y divide-white/[0.06]">
         {daily.map((day, idx) => {
           const min = unit === 'F' ? day.minTempF : day.minTempC;
           const max = unit === 'F' ? day.maxTempF : day.maxTempC;
@@ -130,7 +130,7 @@ export const DailyForecast: React.FC<DailyForecastProps> = ({ daily, unit, curre
                     {min}°
                   </span>
 
-                  <div className="flex-1 h-2 bg-slate-800 rounded-full relative overflow-hidden border border-slate-700/50">
+                  <div className="flex-1 h-2 bg-white/[0.08] rounded-full relative overflow-hidden border border-white/[0.06]">
                     {/* Gradiente térmico (azul/verde -> ámbar -> rojo) */}
                     <div
                       className="absolute top-0 bottom-0 rounded-full bg-gradient-to-r from-sky-400 via-amber-400 to-rose-500"
@@ -143,29 +143,26 @@ export const DailyForecast: React.FC<DailyForecastProps> = ({ daily, unit, curre
                     {/* Indicador de temperatura actual ● en la barra de "Hoy" */}
                     {isToday && (
                       <div
-                        className="absolute top-0 bottom-0 w-2.5 h-2.5 -mt-[1px] bg-white rounded-full shadow-[0_0_8px_white] border border-slate-900 z-10"
-                        style={{
-                          left: `${leftPercent + (widthPercent * currentMarkerPercent) / 100}%`,
-                          transform: 'translateX(-50%)',
-                        }}
+                        className="absolute top-1/2 -translate-y-1/2 w-2.5 h-2.5 rounded-full bg-white shadow-[0_0_6px_white] border border-slate-900"
+                        style={{ left: `calc(${currentMarkerPercent}% - 5px)` }}
+                        title={`Ahora: ${currentTemp}°`}
                       />
                     )}
                   </div>
 
-                  <span className="text-[11px] font-extrabold text-white w-6 text-left">
+                  <span className="text-[11px] font-bold text-white w-6 text-left">
                     {max}°
                   </span>
 
-                  {/* Indicador de flecha para expandir */}
                   <div className="text-slate-500 ml-1">
                     {isExpanded ? <ChevronUp className="w-3.5 h-3.5 text-amber-400" /> : <ChevronDown className="w-3.5 h-3.5" />}
                   </div>
                 </div>
               </div>
 
-              {/* Fila Desplegable: "El Plan de Lobo" */}
+              {/* Fila Desplegable: "El Plan de Lobo" estilo Liquid Glass */}
               {isExpanded && (
-                <div className="mb-2 p-3 rounded-2xl bg-slate-950/80 border border-slate-800 animate-fadeIn">
+                <div className="mb-2 p-3 rounded-2xl bg-white/[0.04] border border-white/[0.08] shadow-[inset_0_1px_0.5px_rgba(255,255,255,0.1)] backdrop-blur-md animate-fadeIn">
                   <div className="flex items-start gap-2.5">
                     <div className="w-8 h-8 rounded-full overflow-hidden flex-shrink-0 border border-amber-400 shadow">
                       <img src="/lobo/icon.jpg" alt="Lobo" className="w-full h-full object-cover" />

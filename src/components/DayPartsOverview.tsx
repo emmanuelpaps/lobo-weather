@@ -31,9 +31,9 @@ export const DayPartsOverview: React.FC<DayPartsOverviewProps> = ({ dayParts, un
 
   const getCardTheme = (key: string, isCurrent: boolean) => {
     if (isCurrent) {
-      return 'bg-gradient-to-b from-slate-800/95 to-slate-900/95 border-amber-400/50 shadow-lg shadow-amber-500/10 ring-1 ring-amber-400/30';
+      return 'bg-amber-500/15 backdrop-blur-xl border-amber-400/50 shadow-[inset_0_1px_1px_rgba(255,255,255,0.2),0_8px_20px_rgba(245,158,11,0.15)] ring-1 ring-amber-400/30';
     }
-    return 'bg-slate-900/80 hover:bg-slate-850/80 border-slate-800';
+    return 'bg-white/[0.04] hover:bg-white/[0.07] border-white/[0.07] shadow-[inset_0_1px_0.5px_rgba(255,255,255,0.1)]';
   };
 
   const toggleExpand = (key: string) => {
@@ -41,9 +41,9 @@ export const DayPartsOverview: React.FC<DayPartsOverviewProps> = ({ dayParts, un
   };
 
   return (
-    <div className="w-full rounded-3xl bg-slate-900/90 p-4 border border-slate-800 shadow-xl backdrop-blur-sm select-none">
+    <div className="w-full rounded-3xl bg-slate-900/55 p-4 border border-white/[0.08] shadow-[inset_0_1px_1px_rgba(255,255,255,0.14),0_12px_32px_rgba(0,0,0,0.35)] backdrop-blur-2xl select-none">
       {/* Header */}
-      <div className="flex items-center justify-between mb-3 pb-2.5 border-b border-slate-800">
+      <div className="flex items-center justify-between mb-3 pb-2.5 border-b border-white/[0.08]">
         <h3 className="text-xs font-extrabold uppercase tracking-wider text-slate-300 flex items-center gap-2">
           <span className="w-2 h-2 rounded-full bg-amber-400 animate-pulse" />
           4 Momentos del Día en Juárez

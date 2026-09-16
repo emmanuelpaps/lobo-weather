@@ -17,7 +17,7 @@ export const LoboLoveNote: React.FC = () => {
   };
 
   return (
-    <div className="w-full rounded-3xl bg-gradient-to-br from-rose-950/70 via-slate-900/95 to-slate-950 border border-rose-500/40 p-4 shadow-2xl backdrop-blur-md select-none relative overflow-hidden">
+    <div className="w-full rounded-3xl bg-gradient-to-br from-rose-950/50 via-slate-900/60 to-slate-950/70 border border-rose-500/35 p-4 shadow-[inset_0_1px_1px_rgba(255,255,255,0.18),0_16px_36px_rgba(244,63,94,0.18)] backdrop-blur-2xl select-none relative overflow-hidden">
       {/* Resplandor decorativo de fondo */}
       <div className="absolute -top-10 -right-10 w-32 h-32 bg-rose-500/15 rounded-full blur-2xl pointer-events-none" />
 
@@ -39,15 +39,15 @@ export const LoboLoveNote: React.FC = () => {
 
         <button
           onClick={handleNextNote}
-          className="flex items-center gap-1.5 text-xs font-bold text-rose-200 bg-rose-500/25 hover:bg-rose-500/35 active:scale-95 px-3 py-1.5 rounded-full border border-rose-400/40 transition-all shadow-sm"
+          className="flex items-center gap-1.5 text-xs font-bold text-rose-200 bg-rose-500/25 hover:bg-rose-500/35 active:scale-95 px-3 py-1.5 rounded-full border border-rose-400/40 transition-all shadow-[inset_0_1px_0.5px_rgba(255,255,255,0.15)]"
         >
           <RefreshCw className={`w-3.5 h-3.5 text-rose-300 ${isAnimating ? 'animate-spin' : ''}`} />
           <span>Otra cartita</span>
         </button>
       </div>
 
-      {/* Contenido de la Cartita (Alto Contraste en Blanco Brillante) */}
-      <div className="flex items-start gap-3.5 mt-1 relative z-10 bg-slate-950/60 rounded-2xl p-3 border border-rose-500/20">
+      {/* Contenido de la Cartita (Alto Contraste en Blanco Brillante) estilo Liquid Glass */}
+      <div className="flex items-start gap-3.5 mt-1 relative z-10 bg-white/[0.04] rounded-2xl p-3 border border-rose-400/25 shadow-[inset_0_1px_0.5px_rgba(255,255,255,0.12)] backdrop-blur-md">
         <div className="w-11 h-11 rounded-full overflow-hidden flex-shrink-0 border-2 border-rose-400 shadow-md ring-2 ring-rose-500/30">
           <img src="/lobo/icon.jpg" alt="Lobo" className="w-full h-full object-cover" />
         </div>

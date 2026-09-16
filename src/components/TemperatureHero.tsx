@@ -65,10 +65,10 @@ export const TemperatureHero: React.FC<TemperatureHeroProps> = ({
         </div>
       </div>
 
-      {/* Tres Estadísticas Clave en estilo Dark Glass elegante */}
-      <div className="grid grid-cols-3 gap-2.5 pt-2 border-t border-slate-800">
-        <div className="flex items-center gap-2.5 p-2.5 rounded-2xl bg-slate-800/80 border border-slate-700/60 shadow-sm">
-          <div className="p-1.5 rounded-xl bg-sky-500/10 text-sky-400 flex-shrink-0">
+      {/* Tres Estadísticas Clave en estilo Liquid Glass */}
+      <div className="grid grid-cols-3 gap-2.5 pt-2 border-t border-white/[0.08]">
+        <div className="flex items-center gap-2.5 p-2.5 rounded-2xl bg-white/[0.04] border border-white/[0.07] shadow-[inset_0_1px_0.5px_rgba(255,255,255,0.12)]">
+          <div className="p-1.5 rounded-xl bg-sky-500/15 text-sky-400 flex-shrink-0">
             <Droplets className="w-4 h-4" />
           </div>
           <div className="truncate">
@@ -77,8 +77,8 @@ export const TemperatureHero: React.FC<TemperatureHeroProps> = ({
           </div>
         </div>
 
-        <div className="flex items-center gap-2.5 p-2.5 rounded-2xl bg-slate-800/80 border border-slate-700/60 shadow-sm">
-          <div className="p-1.5 rounded-xl bg-indigo-500/10 text-indigo-400 flex-shrink-0">
+        <div className="flex items-center gap-2.5 p-2.5 rounded-2xl bg-white/[0.04] border border-white/[0.07] shadow-[inset_0_1px_0.5px_rgba(255,255,255,0.12)]">
+          <div className="p-1.5 rounded-xl bg-indigo-500/15 text-indigo-400 flex-shrink-0">
             <Droplets className="w-4 h-4" />
           </div>
           <div className="truncate">
@@ -87,8 +87,8 @@ export const TemperatureHero: React.FC<TemperatureHeroProps> = ({
           </div>
         </div>
 
-        <div className="flex items-center gap-2.5 p-2.5 rounded-2xl bg-slate-800/80 border border-slate-700/60 shadow-sm">
-          <div className="p-1.5 rounded-xl bg-teal-500/10 text-teal-400 flex-shrink-0">
+        <div className="flex items-center gap-2.5 p-2.5 rounded-2xl bg-white/[0.04] border border-white/[0.07] shadow-[inset_0_1px_0.5px_rgba(255,255,255,0.12)]">
+          <div className="p-1.5 rounded-xl bg-teal-500/15 text-teal-400 flex-shrink-0">
             <Wind className="w-4 h-4" />
           </div>
           <div className="truncate">

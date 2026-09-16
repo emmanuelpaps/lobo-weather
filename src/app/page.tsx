@@ -151,9 +151,9 @@ export default function LoboWeatherPage() {
         {/* Escena Dinámica de Lobo */}
         <LoboScene mood={currentMood} />
 
-        {/* Hero de Temperatura Actual estilo Google */}
-        <div className="rounded-3xl bg-slate-900/90 border border-slate-800 p-4 shadow-xl backdrop-blur-sm">
-          <div className="flex items-center justify-between pb-2 mb-2 border-b border-slate-800">
+        {/* Hero de Temperatura Actual estilo Liquid Glass */}
+        <div className="rounded-3xl bg-slate-900/55 border border-white/[0.08] p-4 shadow-[inset_0_1px_1px_rgba(255,255,255,0.15),0_12px_36px_rgba(0,0,0,0.4)] backdrop-blur-2xl">
+          <div className="flex items-center justify-between pb-2 mb-2 border-b border-white/[0.08]">
             <span className="text-xs font-bold text-slate-300 flex items-center gap-1.5">
               <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
               Clima en Vivo • {weather.neighborhood}
@@ -203,8 +203,8 @@ export default function LoboWeatherPage() {
           onSelectMood={handleSelectMood}
         />
 
-        {/* Guía Exclusiva de Instalación en iPhone 14 (Safari PWA) */}
-        <div className="rounded-3xl bg-slate-900/90 border border-slate-800 p-4 shadow-xl backdrop-blur-sm">
+        {/* Guía Exclusiva de Instalación en iPhone 14 (Safari PWA) estilo Liquid Glass */}
+        <div className="rounded-3xl bg-slate-900/55 border border-white/[0.08] p-4 shadow-[inset_0_1px_1px_rgba(255,255,255,0.15),0_12px_36px_rgba(0,0,0,0.4)] backdrop-blur-2xl">
           <div className="flex items-start gap-3">
             <div className="p-2.5 rounded-2xl bg-sky-500/15 border border-sky-500/30 text-sky-400 flex-shrink-0">
               <Smartphone className="w-5 h-5" />
@@ -226,16 +226,16 @@ export default function LoboWeatherPage() {
               </p>
 
               {showPwaTip && (
-                <div className="mt-3 pt-3 border-t border-slate-800 space-y-2.5 text-xs text-slate-200 animate-fadeIn">
-                  <div className="flex items-start gap-2 bg-slate-950/60 p-2.5 rounded-xl border border-slate-800">
+                <div className="mt-3 pt-3 border-t border-white/[0.08] space-y-2.5 text-xs text-slate-200 animate-fadeIn">
+                  <div className="flex items-start gap-2 bg-white/[0.04] p-2.5 rounded-2xl border border-white/[0.06] shadow-[inset_0_1px_0.5px_rgba(255,255,255,0.1)]">
                     <span className="w-5 h-5 rounded-full bg-sky-500 text-white font-bold flex items-center justify-center text-[10px] flex-shrink-0 mt-0.5">1</span>
                     <p>En <strong>Safari</strong>, toca el botón de <strong>Compartir</strong> (el ícono del cuadrito con la flecha hacia arriba <span className="font-bold text-sky-400">↑</span> en la barra inferior).</p>
                   </div>
-                  <div className="flex items-start gap-2 bg-slate-950/60 p-2.5 rounded-xl border border-slate-800">
+                  <div className="flex items-start gap-2 bg-white/[0.04] p-2.5 rounded-2xl border border-white/[0.06] shadow-[inset_0_1px_0.5px_rgba(255,255,255,0.1)]">
                     <span className="w-5 h-5 rounded-full bg-sky-500 text-white font-bold flex items-center justify-center text-[10px] flex-shrink-0 mt-0.5">2</span>
                     <p>Desliza hacia abajo y selecciona <strong>"Agregar a pantalla de inicio"</strong> (con el ícono de <span className="font-bold text-sky-400">➕</span>).</p>
                   </div>
-                  <div className="flex items-start gap-2 bg-slate-950/60 p-2.5 rounded-xl border border-slate-800">
+                  <div className="flex items-start gap-2 bg-white/[0.04] p-2.5 rounded-2xl border border-white/[0.06] shadow-[inset_0_1px_0.5px_rgba(255,255,255,0.1)]">
                     <span className="w-5 h-5 rounded-full bg-sky-500 text-white font-bold flex items-center justify-center text-[10px] flex-shrink-0 mt-0.5">3</span>
                     <p>Toca <strong>"Agregar"</strong> arriba a la derecha. ¡Listo! La carita de Lobo aparecerá en tu iPhone lista para abrirse en pantalla completa.</p>
                   </div>
