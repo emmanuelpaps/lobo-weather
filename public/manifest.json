@@ -1,0 +1,23 @@
+{
+  "name": "Lobo Weather",
+  "short_name": "Lobo",
+  "description": "El clima de Ciudad Juárez con Lobo el Alaskan Malamute para Miriam",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#020617",
+  "theme_color": "#020617",
+  "icons": [
+    {
+      "src": "/lobo/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/lobo/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
