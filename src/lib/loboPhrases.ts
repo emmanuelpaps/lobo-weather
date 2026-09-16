@@ -55,6 +55,54 @@ export const MOOD_PHRASES: Record<LoboMood, LoboPhrase[]> = {
     },
   ],
 
+  cloudy: [
+    {
+      quote: "¡WOUF, Corazoncillo! El cielo está nubladito y fresco, ¡sin que el sol nos queme!",
+      subtext: "Lobo moviendo la colita feliz porque el clima está delicioso 🐾",
+      tag: "Día nublado",
+    },
+    {
+      quote: "Amorcillo, qué delicia de mañana con nubes suaves sobre Juárez... ¡ideal para un abrazo!",
+      subtext: "Lobo descansando en el pasto disfrutando la sombrita",
+      tag: "Clima perfecto",
+    },
+    {
+      quote: "¡Corazoncillo! Las nubes parecen bolitas de algodón gigante como mi pelaje ártico.",
+      subtext: "Lobo mirando al cielo juarense con cara de curiosidad",
+      tag: "Nubes de algodón",
+    },
+    {
+      quote: "Amorcillo me pidió que te mandara un beso esponjosito como las nubes de hoy, Corazoncillo.",
+      subtext: "Lobo dando un lengüetazo con mucho cariño",
+      tag: "Mensaje de amor",
+    },
+    {
+      quote: "Corazoncillo, el clima está perfecto para caminar por Juárez sin sofocarnos. ¿Vamos?",
+      subtext: "Lobo oliendo las flores y la brisa fresca",
+      tag: "Paseo de nubes",
+    },
+    {
+      quote: "¡Amorcillo! Con este cielo nublado y fresco se antoja un cafecito calientito y apapachos.",
+      subtext: "Lobo acurrucado plácidamente en el deck",
+      tag: "Momento cozy",
+    },
+    {
+      quote: "Corazoncillo, aunque el sol esté escondido tras las nubes, tú siempre iluminas el día.",
+      subtext: "Lobo dándote la patita con ternura",
+      tag: "Ternura total",
+    },
+    {
+      quote: "¡WOUF! No hay sol directo pero la luz suave está perfecta para fotos bonitas, Corazoncillo.",
+      subtext: "Lobo posando como todo un galán frente a La X",
+      tag: "Sesión de fotos",
+    },
+    {
+      quote: "Amorcillo, hoy es de esos días templados y tranquilos de Juárez que dan paz al corazón.",
+      subtext: "Lobo suspirando contento con sus orejitas al viento",
+      tag: "Paz juarense",
+    },
+  ],
+
   heat: [
     {
       quote: "¡Amorcillo, auxilio! Juárez parece un comal encendido... ¡me estoy derritiendo!",

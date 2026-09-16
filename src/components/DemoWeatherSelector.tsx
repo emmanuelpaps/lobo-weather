@@ -19,6 +19,7 @@ export const DemoWeatherSelector: React.FC<DemoWeatherSelectorProps> = ({
 
   const scenes: { mood: LoboMood; label: string; emoji: string; desc: string }[] = [
     { mood: 'sunny', label: 'Soleado', emoji: '☀️', desc: '3 poses con helado y pelota' },
+    { mood: 'cloudy', label: 'Nublado', emoji: '☁️', desc: 'La X, flor y deck fresco' },
     { mood: 'heat', label: 'Calor Extremo', emoji: '🔥', desc: 'Alberca, cooler y sandía' },
     { mood: 'thunderstorm', label: 'Tormenta', emoji: '⛈️', desc: 'Cobija, mesa y audífonos' },
     { mood: 'winter', label: 'Invierno', emoji: '❄️', desc: 'Bufanda, mono de nieve y trineo' },
@@ -37,7 +38,7 @@ export const DemoWeatherSelector: React.FC<DemoWeatherSelectorProps> = ({
       >
         <div className="flex items-center gap-2">
           <Wand2 className="w-4 h-4 text-amber-400 animate-spin" style={{ animationDuration: '8s' }} />
-          <span>Probar las 24 Escenas de Lobo</span>
+          <span>Probar las 27 Escenas de Lobo</span>
           {!isRealTime && (
             <span className="text-[10px] bg-amber-500/20 text-amber-300 px-2 py-0.5 rounded-full font-extrabold border border-amber-500/40">
               Demo Activo

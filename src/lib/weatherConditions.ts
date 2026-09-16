@@ -11,6 +11,16 @@ export const MOOD_DETAILS: Record<LoboMood, WeatherConditionInfo> = {
     accentColor: '#0284c7',
     bannerGradient: 'from-sky-400 via-sky-300 to-amber-200',
   },
+  cloudy: {
+    mood: 'cloudy',
+    title: 'Día Nublado y Fresco',
+    description: 'Cielo nublado sobre Juárez; Lobo disfrutando el paseo sin sol',
+    imageSrc: '/lobo/cloudy.jpg',
+    images: ['/lobo/cloudy.jpg', '/lobo/cloudy_2.jpg', '/lobo/cloudy_3.jpg'],
+    bgColor: '#64748b',
+    accentColor: '#475569',
+    bannerGradient: 'from-slate-400 via-sky-200 to-slate-300',
+  },
   heat: {
     mood: 'heat',
     title: '¡Calor Extremo Juarense!',
@@ -106,8 +116,9 @@ export function calculateLoboMood(params: {
   windSpeedMph: number;
   isDay: boolean;
   currentHour?: number;
+  cloudCover?: number;
 }): LoboMood {
-  const { weatherCode, tempF, windSpeedMph, isDay, currentHour } = params;
+  const { weatherCode, tempF, windSpeedMph, isDay, currentHour, cloudCover } = params;
 
   if (weatherCode >= 95 && weatherCode <= 99) {
     return 'thunderstorm';
@@ -127,8 +138,18 @@ export function calculateLoboMood(params: {
   if (!isDay) {
     return 'night';
   }
-  if (tempF >= 90) {
+  if (tempF >= 92) {
     return 'heat';
+  }
+  // Detección de cielo nublado / parcialmente nublado en Juárez
+  if (
+    weatherCode === 3 || // Nublado (Overcast)
+    weatherCode === 2 || // Parcialmente nublado
+    weatherCode === 45 || // Niebla
+    weatherCode === 48 ||
+    (cloudCover !== undefined && cloudCover >= 40)
+  ) {
+    return 'cloudy';
   }
   return 'sunny';
 }

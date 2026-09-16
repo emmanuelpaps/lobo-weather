@@ -226,7 +226,7 @@ export async function fetchJuarezWeather(coords?: { lat: number; lon: number }):
 
   try {
     const geoPromise = reverseGeocodeCoords(targetLat, targetLon);
-    const url = `https://api.open-meteo.com/v1/forecast?latitude=${targetLat}&longitude=${targetLon}&current=temperature_2m,relative_humidity_2m,apparent_temperature,is_day,precipitation,weather_code,wind_speed_10m,uv_index&hourly=temperature_2m,apparent_temperature,precipitation_probability,weather_code,wind_speed_10m,is_day&daily=weather_code,temperature_2m_max,temperature_2m_min,precipitation_probability_max,sunrise,sunset&temperature_unit=fahrenheit&wind_speed_unit=mph&precipitation_unit=inch&timezone=auto`;
+    const url = `https://api.open-meteo.com/v1/forecast?latitude=${targetLat}&longitude=${targetLon}&current=temperature_2m,relative_humidity_2m,apparent_temperature,is_day,precipitation,weather_code,wind_speed_10m,uv_index,cloud_cover&hourly=temperature_2m,apparent_temperature,precipitation_probability,weather_code,wind_speed_10m,is_day&daily=weather_code,temperature_2m_max,temperature_2m_min,precipitation_probability_max,sunrise,sunset&temperature_unit=fahrenheit&wind_speed_unit=mph&precipitation_unit=inch&timezone=auto`;
 
     const res = await fetch(url, { next: { revalidate: 300 } });
     if (!res.ok) {
@@ -248,6 +248,7 @@ export async function fetchJuarezWeather(coords?: { lat: number; lon: number }):
     const windMph = Math.round(current.wind_speed_10m);
     const windKmh = Math.round(windMph * 1.60934);
     const weatherCode = current.weather_code ?? 0;
+    const cloudCover = Math.round(current.cloud_cover ?? 0);
 
     const jTime = getJuarezLocalTime();
     const currentHour = jTime.hour;
@@ -371,7 +372,13 @@ export async function fetchJuarezWeather(coords?: { lat: number; lon: number }):
       windSpeedMph: windMph,
       isDay,
       currentHour,
+      cloudCover,
     });
+
+    let conditionText = getWmoConditionText(weatherCode);
+    if (cloudCover >= 65 && (weatherCode === 0 || weatherCode === 1)) {
+      conditionText = 'Mayormente nublado';
+    }
 
     return {
       city: geoInfo.city,
@@ -386,7 +393,7 @@ export async function fetchJuarezWeather(coords?: { lat: number; lon: number }):
         windSpeedKmh: windKmh,
         uvIndex: Math.round(current.uv_index ?? 0),
         weatherCode,
-        conditionText: getWmoConditionText(weatherCode),
+        conditionText,
         isDay,
         precipitationProbability: Math.round(current.precipitation ?? 0),
         sunriseTime: formatTime(rawSunrise),

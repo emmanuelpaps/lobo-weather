@@ -1,5 +1,6 @@
 export type LoboMood = 
   | 'sunny'
+  | 'cloudy'
   | 'thunderstorm'
   | 'heat'
   | 'winter'

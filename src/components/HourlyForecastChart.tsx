@@ -308,6 +308,8 @@ export const HourlyForecastChart: React.FC<HourlyForecastChartProps> = ({ hourly
             loboCustomQuote = `A las ${selected.timeLabel} se prevé lluvia (${selected.precipitationProb}%). ¡Día de cafecito caliente y botitas para Amorcillo!`;
           } else if (selected.windSpeedMph >= 16) {
             loboCustomQuote = `A las ${selected.timeLabel} habrá viento fuerte (${wind}). Cierra bien ventanas en casa y cuidado con la tierrita al salir.`;
+          } else if (predictedMood === 'cloudy') {
+            loboCustomQuote = `A las ${selected.timeLabel} el cielo estará nubladito y fresco (${temp}°). ¡Ideal para caminar sin el calor del sol, Corazoncillo!`;
           } else if (!selected.isDay) {
             loboCustomQuote = `A las ${selected.timeLabel} la noche estará fresca y tranquila (${temp}°). Lobo hecho rosquilla durmiendo a tus pies.`;
           }

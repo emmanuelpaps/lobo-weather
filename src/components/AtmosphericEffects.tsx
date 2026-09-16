@@ -114,6 +114,26 @@ export const AtmosphericEffects: React.FC<AtmosphericEffectsProps> = ({ mood }) 
       {mood === 'heat' && (
         <div className="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-amber-500/15 via-orange-400/10 to-transparent animate-heat-shimmer" />
       )}
+
+      {/* 7. Día Nublado (nubes suaves flotantes en Juárez) */}
+      {mood === 'cloudy' && (
+        <div className="absolute inset-0">
+          {[...Array(5)].map((_, i) => (
+            <div
+              key={i}
+              className="absolute rounded-full bg-white/20 blur-md pointer-events-none animate-wind"
+              style={{
+                width: `${100 + (i % 3) * 50}px`,
+                height: `${28 + (i % 2) * 12}px`,
+                top: `${10 + i * 14}%`,
+                left: '-25%',
+                animationDelay: `${i * 1.6}s`,
+                animationDuration: `${14 + (i % 3) * 3}s`,
+              }}
+            />
+          ))}
+        </div>
+      )}
     </div>
   );
 };
